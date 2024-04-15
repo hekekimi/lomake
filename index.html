@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        label,.virheet {
+        display: inline-block;
+        width: 100px;
+        
+        }
+        
+        
+        #osoite,#nimi,#sahkoposti{
+            
+            width: 370px;
+
+        }
+        #kayttajaid,#salasana{
+            width: 100px;
+        }
+        #mieslabel,#nainenlabel{
+            width: 30px;
+        }
+        
+        #labelsuomi{
+            width: 40px;
+        }
+        #labelmuu{
+            width: 120px;
+        }
+       .virheet{
+        
+        width:max-content;
+        
+        color: crimson;
+        font-size: 11px;
+        padding-left: 20px;
+       }
+
+    </style>
+</head>
+<body>
+<h1>Rekisteröitymislomake</h1>
+<h3>Siirry kentästä toiseen tab-näppäimellä</h3>
+
+
+<form>
+
+<div class ="input">
+<label for="kayttajaid">Käyttäjä ID:</label> 
+<input type="text" name="kayttajaid" id="kayttajaid"> <p class="virheet" id="id_virhe"></p>
+<br>
+<br>
+<label for="salasana">Salasana</label>
+<input type="password" name="" id="salasana"><p class="virheet" id="salasanavirhe"></p>
+<br>
+<br>
+<label for="nimi">Nimi</label>
+<input type="text" name="" id="nimi"><p class="virheet" id="nimi_virhe"></p>
+<br>
+<br>
+<label for="osoite">Osoite</label>
+<input type="text" name="" id="osoite"><p class="virheet" id="osoite_virhe"></p> <br>
+<br>
+<label for="maa">Maa</label>
+<select name="maa" id="maa">
+<option value="Maa" selected>(Valitse maa)</option>
+<option value="suomi">Suomi</option>
+<option value="ruotsi">Ruotsi</option>
+<option value="other">Other</option>
+
+
+</select>
+<p class="virheet" id="maa_virhe"></p>
+
+
+<br>
+<br>
+<label for="postinumero">Postinumero</label>
+<input type="text" name ="" id="postinumero"><p class="virheet" id="postinumero_virhe"></p>
+<br><br>
+<label for="sahkoposti">Sähkoposti</label>
+<input type="text" name="" id="sahkoposti"><p class="virheet" id="sahkoposti_virhe"></p>
+<br><br>
+<label for="sukupuoli" id="sukupuoli">Sukupuoli:</label>
+
+
+<input type="radio" name="sukupuoli" id="mies" value="Mies">
+<label for="mies" id="mieslabel">Mies</label>
+
+
+
+
+<input type="radio" name="sukupuoli" id="nainen" value="Nainen">
+<label for="nainen" id="nainenlabel">Nainen</label>
+<p class="virheet" id="sukupuoli_virhe"></p>
+
+
+
+<br><br>
+<label for="kieli">Kieli:</label>
+
+<input type="checkbox" name="suomi" id="suomi">
+<label for="suomi" id="labelsuomi">Suomi</label>
+<input type="checkbox" name="muu" id="muu">
+<label for="muu" id="labelmuu">Muu kuin suomi</label><p class="virheet" id="kieli_virhe"></p>
+
+<br>
+<label for="lisatietoja">Lisätietoja:</label>
+
+<textarea name="" id="" cols="50" rows="10"></textarea>
+<br><br>
+<input type="submit" id="laheta" value="Lähetä">
+
+</div>
+</form>
+
+
+
+
+
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
