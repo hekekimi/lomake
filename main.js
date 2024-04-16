@@ -25,6 +25,17 @@ lahetanappi.addEventListener("click", checkFormFields);
 
 
 
+const virhe_ilmoitukset = 
+{
+    tyhjaKentta: "Pakollinen tieto puuttuu",
+    lyhytID : "Käyttäjänimen tulee olla vähintään 6 merkkiä",
+    virheSalasana: "Salasanan täytyy olla vähintään 6 merkkiä pitkä ja sisältää erikoismerkkejä, isoja kirjaimia ja numeroita",
+    virhe_sahkoposti: " Sähköpostiosoite ei ole oikeassa muodossa",
+    virhe_postinumero: "Postinumerossa tulee olla vähintään 5 numeroa",
+    
+
+
+};
 
 
 
@@ -42,9 +53,11 @@ let email_merkit =  /^([A-Za-z0-9-.])+@([A-Za-z0-9-.])+.([A-Za-z]{2,4})$/.test(s
 
 if(nimi.value == "")
 {
-nimi_virhe.innerHTML = " Pakollinen tieto puuttuu";
+nimi_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
     
 }
+
+
 
 else{
     nimi_virhe.innerHTML ="";
@@ -54,7 +67,7 @@ else{
 
 if(postinumero.value.length < 5 || isNaN(postinumero.value))
 {
-    postinumero_virhe.innerHTML = " Postinumerossa tulee olla vähintään 5 numeroa";
+    postinumero_virhe.innerHTML = virhe_ilmoitukset.virhe_postinumero;
 }
 else
 {
@@ -65,7 +78,7 @@ else
 
 if(osoite.value =="")
 {
-    osoitevirhe.innerHTML =" Pakollinen tieto puuttuu";
+    osoitevirhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
 }
 else{
     osoitevirhe.innerHTML = "";
@@ -80,13 +93,13 @@ if(maa.value == "suomi"|| maa.value == "ruotsi"||maa.value =="other")
 else
 {
 
-    maa_virhe.innerHTML =" Pakollinen tieto puuttuu";
+    maa_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
 }
 
 if (sahkoposti.value == "" || email_merkit == false)
 
 {
-    sahkoposti_virhe.innerHTML =" Sähköpostiosoite ei ole oikeassa muodossa";
+    sahkoposti_virhe.innerHTML = virhe_ilmoitukset.virhe_sahkoposti;
 
 }
 else{
@@ -99,7 +112,7 @@ else{
 if(kayttaja.value.length  < 6 )
 {
 
-    id_virhe.innerHTML = " Käyttäjänimen tulee olla vähintään 6 merkkiä";
+    id_virhe.innerHTML = virhe_ilmoitukset.lyhytID;
 }
 else
 {
@@ -110,7 +123,7 @@ if(salasana.value.length < 6 || numerot == false || erikoiset == false || isot =
 
 
 {
-    ss_virhe.innerHTML =" Salasanan täytyy olla vähintään 6 merkkiä pitkä ja sisältää erikoismerkkejä, isoja kirjaimia ja numeroita";
+    ss_virhe.innerHTML = virhe_ilmoitukset.virheSalasana;
 }
 else
 {
@@ -123,7 +136,7 @@ if(mies.checked || nainen.checked)
 }
 else{
 
-    sukupuoli_virhe.innerHTML = "Valinta puuttuu"
+    sukupuoli_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
 }
 
 
@@ -133,15 +146,8 @@ kieli_virhe.innerHTML = ""
 }
 
 else{
-    kieli_virhe.innerHTML = "Valinta puuttuu"
+    kieli_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
 }
-
-
-
-
-
-
-
 
 
 
