@@ -25,13 +25,15 @@ lahetanappi.addEventListener("click", checkFormFields);
 
 
 
-const virhe_ilmoitukset = 
+
+const ilmoitukset = 
 {
     tyhjaKentta: "Pakollinen tieto puuttuu",
     lyhytID : "Käyttäjänimen tulee olla vähintään 6 merkkiä",
     virheSalasana: "Salasanan täytyy olla vähintään 6 merkkiä pitkä ja sisältää erikoismerkkejä, isoja kirjaimia ja numeroita",
     virhe_sahkoposti: " Sähköpostiosoite ei ole oikeassa muodossa",
     virhe_postinumero: "Postinumerossa tulee olla vähintään 5 numeroa",
+    kaikki_ok: "&#10004;"
     
 
 
@@ -53,57 +55,67 @@ let email_merkit =  /^([A-Za-z0-9-.])+@([A-Za-z0-9-.])+.([A-Za-z]{2,4})$/.test(s
 
 if(nimi.value == "")
 {
-nimi_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
-    
+nimi_virhe.innerHTML = ilmoitukset.tyhjaKentta;
+nimi_virhe.classList.remove("green");  
 }
 
 
 
 else{
-    nimi_virhe.innerHTML ="";
+    nimi_virhe.innerHTML =ilmoitukset.kaikki_ok;
+    nimi_virhe.classList.add("green");
 }
 
 
 
 if(postinumero.value.length < 5 || isNaN(postinumero.value))
 {
-    postinumero_virhe.innerHTML = virhe_ilmoitukset.virhe_postinumero;
+    postinumero_virhe.innerHTML = ilmoitukset.virhe_postinumero;
+    postinumero_virhe.classList.remove("green")
+    
 }
 else
 {
-    postinumero_virhe.innerHTML = "";
+    postinumero_virhe.innerHTML = ilmoitukset.kaikki_ok;
+    postinumero_virhe.classList.add("green")
 }
 
 
 
 if(osoite.value =="")
 {
-    osoitevirhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
+    osoitevirhe.innerHTML = ilmoitukset.tyhjaKentta;
+    osoitevirhe.classList.remove("green");
 }
 else{
-    osoitevirhe.innerHTML = "";
+    osoitevirhe.innerHTML = ilmoitukset.kaikki_ok;
+    osoitevirhe.classList.add("green");
 }
 
 if(maa.value == "suomi"|| maa.value == "ruotsi"||maa.value =="other")
 {
 
-    maa_virhe.innerHTML = "";
+    maa_virhe.innerHTML = ilmoitukset.kaikki_ok;
+    maa_virhe.classList.add("green");
 }
 
 else
 {
 
-    maa_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
+    maa_virhe.innerHTML = ilmoitukset.tyhjaKentta;
+    maa_virhe.classList.remove("green");
 }
 
 if (sahkoposti.value == "" || email_merkit == false)
 
 {
-    sahkoposti_virhe.innerHTML = virhe_ilmoitukset.virhe_sahkoposti;
+    sahkoposti_virhe.innerHTML = ilmoitukset.virhe_sahkoposti;
+    sahkoposti_virhe.classList.remove("green");
 
 }
 else{
-    sahkoposti_virhe.innerHTML ="";
+    sahkoposti_virhe.innerHTML =ilmoitukset.kaikki_ok;
+    sahkoposti_virhe.classList.add("green");
 }
 
 
@@ -112,41 +124,49 @@ else{
 if(kayttaja.value.length  < 6 )
 {
 
-    id_virhe.innerHTML = virhe_ilmoitukset.lyhytID;
+    id_virhe.innerHTML = ilmoitukset.lyhytID;
+    id_virhe.classList.remove("green");
 }
 else
 {
-    id_virhe.innerHTML =""
+    id_virhe.innerHTML = ilmoitukset.kaikki_ok;
+    id_virhe.classList.add("green");
 }
 
 if(salasana.value.length < 6 || numerot == false || erikoiset == false || isot == false)
 
 
 {
-    ss_virhe.innerHTML = virhe_ilmoitukset.virheSalasana;
+    ss_virhe.innerHTML = ilmoitukset.virheSalasana;
+    ss_virhe.classList.remove("green");
 }
 else
 {
-    ss_virhe.innerHTML = "";
+    ss_virhe.innerHTML = ilmoitukset.kaikki_ok;
+    ss_virhe.classList.add("green");
 }
 if(mies.checked || nainen.checked)
 {
-    sukupuoli_virhe.innerHTML ="";
+    sukupuoli_virhe.innerHTML = ilmoitukset.kaikki_ok;
+    sukupuoli_virhe.classList.add("green");
 
 }
 else{
 
-    sukupuoli_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
+    sukupuoli_virhe.innerHTML = ilmoitukset.tyhjaKentta;
+    sukupuoli_virhe.classList.remove("green");
 }
 
 
 if(suomi.checked || muu.checked)
 {
-kieli_virhe.innerHTML = ""
+kieli_virhe.innerHTML = ilmoitukset.kaikki_ok;
+kieli_virhe.classList.add("green");
 }
 
 else{
-    kieli_virhe.innerHTML = virhe_ilmoitukset.tyhjaKentta;
+    kieli_virhe.innerHTML = ilmoitukset.tyhjaKentta;
+    kieli_virhe.classList.remove("green");
 }
 
 
